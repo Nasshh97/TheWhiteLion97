@@ -1,0 +1,118 @@
+
+:root {
+  --bg: #fffdf5;
+  --text: #333;
+  --accent: #d4af37;
+  --header-bg: #fff8e1;
+  --card-bg: #fffaf3;
+  --link: #a57c00;
+}
+
+body.dark-mode {
+  --bg: #1e1e1e;
+  --text: #f5f5f5;
+  --accent: #ffd700;
+  --header-bg: #2e2e2e;
+  --card-bg: #333;
+  --link: #f5c400;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--header-bg);
+  padding: 20px 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--link);
+  font-weight: 600;
+}
+
+.toggle-darkmode {
+  cursor: pointer;
+  padding: 8px 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.toggle-darkmode:hover {
+  opacity: 0.8;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.1);
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease-in;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.post {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  animation: fadeIn 1s ease-in;
+}
+.post:hover {
+  transform: translateY(-5px);
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: var(--header-bg);
+  color: var(--link);
+  font-size: 0.85rem;
+  border-top: 2px solid var(--accent);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
